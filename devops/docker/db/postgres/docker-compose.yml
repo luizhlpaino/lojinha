@@ -2,10 +2,12 @@ services:
   postgres:
     container_name: 'lojinha_postgres'
     image: postgres:latest
+    env_file:
+      - .env
     environment:
-      POSTGRES_PASSWORD: 'Dev@123456'
+      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD}'
     ports:
-      - '5432:5432'
+      - '${POSTGRES_PORT}:5432'
     networks:
       - databases
 

@@ -2,11 +2,13 @@ services:
   mssql:
     container_name: 'lojinha_mssql'
     image: mcr.microsoft.com/mssql/server:latest
+    env_file:
+      - .env
     environment:
-      SA_PASSWORD: 'Dev@123456'
+      SA_PASSWORD: '${MSSQL_SA_PASSWORD}'
       ACCEPT_EULA: 'Y'
     ports:
-      - '1433:1433'
+      - '${MSSQL_PORT}:1433'
     networks:
       - databases
 
