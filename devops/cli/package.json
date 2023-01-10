@@ -1,0 +1,18 @@
+{
+  "name": "lojinha-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.5.0"
+  },
+  "bin": {
+    "lojinha": "./index.js"
+  }
+}

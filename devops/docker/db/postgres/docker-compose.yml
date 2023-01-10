@@ -1,0 +1,15 @@
+services:
+  postgres:
+    container_name: 'lojinha_postgres'
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: 'Dev@123456'
+    ports:
+      - '5432:5432'
+    networks:
+      - databases
+
+networks:
+  databases:
+    name: 'lojinha_databases'
+    driver: bridge
