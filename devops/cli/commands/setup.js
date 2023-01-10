@@ -3,7 +3,7 @@ const path = require('path');
 const chalk = require("chalk");
 const { spawnSyncChildProcess } = require("../utils");
 
-function getDockerComposeFiles() {
+function setupDatabaseContainers() {
     const commandFilePath = path.resolve(__dirname);
     const dbComposeFoldersPath = `${commandFilePath.replace("\\cli\\commands", "")}\\docker\\db`;
     const dbComposeFolders = fs.readdirSync(dbComposeFoldersPath);
@@ -23,7 +23,7 @@ function getDockerComposeFiles() {
 }
 
 function setup() {
-    getDockerComposeFiles();
+    setupDatabaseContainers();
 }
 
 module.exports = {
