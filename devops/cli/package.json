@@ -10,9 +10,19 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.2",
-    "commander": "^9.5.0"
+    "commander": "^9.5.0",
+    "dotenv": "^16.0.3",
+    "knex": "^2.4.0",
+    "module-alias": "^2.2.2"
   },
   "bin": {
     "lojinha": "./index.js"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@commands": "src/commands",
+    "@resources": "src/resources",
+    "@services": "src/services",
+    "@utils": "src/utils"    
   }
 }
