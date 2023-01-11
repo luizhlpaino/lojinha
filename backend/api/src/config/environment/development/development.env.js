@@ -1,5 +1,5 @@
 module.exports = {
-    environment: "development",
+    nodeEnv: "development",
     apiHost: process.env.API_HOST || "localhost",
     apiPort: process.env.API_PORT || "4000",
     db: {

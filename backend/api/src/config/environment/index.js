@@ -6,10 +6,10 @@ const environments = {
     production
 };
 
-const environment = process.env.ENVIRONMENT;
+const environment = process.env.NODE_ENV;
 
 module.exports = {
-    environment: environment,
+    nodeEnv: environment,
     apiHost: environments[environment].apiHost,
     apiPort: environments[environment].apiPort,
     db: {
