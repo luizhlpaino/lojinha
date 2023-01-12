@@ -1,10 +1,11 @@
 require("dotenv").config();
-const express = require("express");
-const bodyParser = require("body-parser");
-const environment = require("@config/environment");
-const routes = require("@routes");
-const { Authenticate } = require("@middlewares/auth.middleware");
+import express from "express";
+import bodyParser from "body-parser";
+import routes from "./routes";
+//const routes = require("@routes");
 
+const environment = require("./config/environment");
+const { Authenticate } = require("./middlewares/auth.middleware");
 const api = express();
 
 api.use(bodyParser.json());
@@ -18,5 +19,5 @@ routes.forEach(route => {
 api.listen(environment.apiPort, () => {
     console.log(`application listening on ${environment.apiHost}:${environment.apiPort}`);
 }); 
-
-module.exports = api;
+ 
+export default api;
