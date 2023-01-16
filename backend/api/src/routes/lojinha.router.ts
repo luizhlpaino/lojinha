@@ -1,8 +1,8 @@
 import { importDefaultModulesByFolder } from "@controllers/import.controller";
-import { LojinhaRoute } from "@routes";
+import { ILojinhaRoute } from "@routes";
 
 export default class LojinhaRouter {
-    private _routes: LojinhaRoute[];
+    private _routes: ILojinhaRoute[];
 
     constructor() {
         this._routes = [];
@@ -13,7 +13,7 @@ export default class LojinhaRouter {
         this._routes = routes;                        
     }
 
-    public getRoutes(): LojinhaRoute[] {
+    public getRoutes(): ILojinhaRoute[] {
         return this._routes;
     }
 }

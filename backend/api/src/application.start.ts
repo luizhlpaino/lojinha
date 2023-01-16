@@ -2,10 +2,10 @@ require("dotenv").config();
 import express from "express";
 import bodyParser from "body-parser";
 
-const environment = require("./config/environment");
-const { Authenticate } = require("./middlewares/auth.middleware");
-import { LojinhaRouter, LojinhaRoute } from "@routes";
+import environment from "@env";
+import { LojinhaRouter, ILojinhaRoute } from "@routes";
 
+import AuthMiddleware from "@middlewares/auth.middleware";
 
 export default class LojinhaApplication {
     private _server: express.Application;
@@ -27,14 +27,14 @@ export default class LojinhaApplication {
     
     private setServerMiddlewares() {
         this._server.use(bodyParser.json());
-        this._server.use((req, res, next) => Authenticate(req, res, next));
+        this._server.use((req, res, next) => new AuthMiddleware(req, res, next));
     }
 
     private async setApiRoutes() {
         await this._router.setup();
-        this._router.getRoutes().forEach((route: LojinhaRoute) => {
+        this._router.getRoutes().forEach((route: ILojinhaRoute) => {            
             console.log(`[${route.method.toUpperCase()}][${route.path}][${route.handler.name}]`);
-            this._server[route.method](route.path, route.handler);
+            this._server[route.method](route.path, route.handler);            
         });        
     }    
 }

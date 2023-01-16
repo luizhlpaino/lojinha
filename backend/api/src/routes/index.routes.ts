@@ -1,4 +1,4 @@
-import LojinhaRoute from "./LojinhaRoute";
-import LojinhaRouter from "./LojinhaRouter";
+import ILojinhaRoute from "@models/lojinha.route";
+import LojinhaRouter from "./lojinha.router";
 
-export { LojinhaRoute, LojinhaRouter };
+export { ILojinhaRoute, LojinhaRouter };

@@ -25,6 +25,10 @@
   },
   "_moduleAliases": {
     "@routes": "./src/routes/index.routes",
-    "@controllers": "./src/controllers/*"
+    "@controllers": "./src/controllers/*",
+    "@middlewares": "./src/middlewares/*",
+    "@models": "./src/models/*",
+    "@config": "./src/config/*",
+    "@env": "./src/config/environment/index.environment"
   }
 }

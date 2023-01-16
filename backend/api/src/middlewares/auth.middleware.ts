@@ -1,8 +1,8 @@
-function Authenticate(req, res, next) {
-    console.log(`before anything, you should authenticate...`);
-    next();
-}
+import express from "express";
 
-module.exports = {
-    Authenticate
+export default class AuthMiddleware {
+    constructor(req: express.Request, res: express.Response, next: express.NextFunction) {                
+        console.log(`before anything, you should authenticate...`);
+        next();
+    }
 }
