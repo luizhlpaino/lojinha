@@ -1,4 +1,4 @@
-export class LojinhaRoute {
+export default class LojinhaRoute {
     private _path: string = "";
     private _method: string = "";
     private _handler: Function = () => {};

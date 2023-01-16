@@ -1,9 +1,9 @@
-import { LojinhaRoute } from "../../models/LojinhaRoute.model";
+import { LojinhaRoute } from "@routes";
 
-function getAPIHealthCheck(req, res) {
-    res.send({ success: true });
-}
+function getHealth(req, res) {
+    res.send({ success: true });    
+};
 
 export default [
-    new LojinhaRoute("/health", "get", getAPIHealthCheck)    
+    new LojinhaRoute("/health", "get", getHealth)
 ];

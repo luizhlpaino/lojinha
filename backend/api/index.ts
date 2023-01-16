@@ -1,1 +1,2 @@
-const api = require("./src/application.start");
+import LojinhaApplication from "./src/application.start";
+new LojinhaApplication().startServer();
