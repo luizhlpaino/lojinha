@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     nodeEnv: "production",
     apiHost: process.env.API_HOST,
     apiPort: process.env.API_PORT,

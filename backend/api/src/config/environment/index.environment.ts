@@ -1,14 +1,14 @@
-const development = require("./development/development.env");
-const production = require("./production/production.env");
+import development from "./development/development.env";
+import production from "./production/production.env";
 
 const environments = {
     development,
     production
 };
 
-const environment = process.env.NODE_ENV;
+const environment = process.env.NODE_ENV || "development";
 
-module.exports = {
+export default {
     nodeEnv: environment,
     apiHost: environments[environment].apiHost,
     apiPort: environments[environment].apiPort,
